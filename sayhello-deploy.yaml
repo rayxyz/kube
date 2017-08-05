@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+    name: sayhello
+spec:
+    replicas: 2
+    template:
+        metadata:
+            labels:
+                app: sayhello
+        spec:
+            containers:
+            - name: sayhello
+              image: ray-xyz.com:9090/sayhello
+              ports:
+              - containerPort: 8787

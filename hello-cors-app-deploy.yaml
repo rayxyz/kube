@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+    name: hello-cors-app
+spec:
+    replicas: 2
+    template:
+        metadata:
+            labels:
+                app: hello-cors-app
+        spec:
+            containers:
+            - name: hello-cors-app
+              image: ray-xyz.com:9090/hello-cors-app
+              ports:
+              - containerPort: 8090
